@@ -21,7 +21,9 @@ const AuthController = {
                 return res.status(400).json({ error: "Password must be at least 6 characters" });
             }
 
+            console.log(`[REGISTER] Attempting to register user: ${email}`);
             const user = await User.create({ name, email, password });
+            console.log(`[REGISTER] User registered successfully: ${email}`);
 
             // Generate JWT token
             const token = jwt.sign(
@@ -36,6 +38,7 @@ const AuthController = {
                 user
             });
         } catch (error) {
+            console.error(`[REGISTER ERROR] ${error.message}`);
             res.status(400).json({ error: error.message });
         }
     },
@@ -49,17 +52,22 @@ const AuthController = {
                 return res.status(400).json({ error: "Email and password required" });
             }
 
+            console.log(`[LOGIN] Attempting to login user: ${email}`);
             const user = await User.findByEmail(email);
 
             if (!user) {
+                console.log(`[LOGIN ERROR] User not found: ${email}`);
                 return res.status(401).json({ error: "Invalid credentials" });
             }
 
             const isPasswordValid = await User.verifyPassword(password, user.password);
 
             if (!isPasswordValid) {
+                console.log(`[LOGIN ERROR] Invalid password for user: ${email}`);
                 return res.status(401).json({ error: "Invalid credentials" });
             }
+
+            console.log(`[LOGIN] User logged in successfully: ${email}`);
 
             // Generate JWT token
             const token = jwt.sign(
@@ -76,6 +84,7 @@ const AuthController = {
                 user
             });
         } catch (error) {
+            console.error(`[LOGIN ERROR] ${error.message}`);
             res.status(500).json({ error: error.message });
         }
     },

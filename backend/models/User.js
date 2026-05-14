@@ -16,7 +16,7 @@ const User = {
         // Check if user exists
         const existingUser = await collection.findOne({ email: userData.email });
         if (existingUser) {
-            throw new Error("User already exists");
+            throw new Error("User already exists with this email");
         }
 
         // Hash password
@@ -41,6 +41,7 @@ const User = {
         const result = await collection.insertOne(user);
         user._id = result.insertedId;
         delete user.password;
+        console.log(`[USER_MODEL] User created successfully: ${user.email}`);
         return user;
     },
 
