@@ -178,20 +178,7 @@ const Login = () => {
                         </button>
                     </form>
 
-                    <div className="auth-divider">
-                        <span>or continue with</span>
-                    </div>
 
-                    <div className="auth-social-row">
-                        <button 
-                            className="auth-social-btn auth-social-btn--full" 
-                            type="button"
-                            title="Continue with Google"
-                        >
-                            <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" width="20" />
-                            Continue with Google
-                        </button>
-                    </div>
 
                     <p className="auth-register-link">
                         Don't have an account?{' '}

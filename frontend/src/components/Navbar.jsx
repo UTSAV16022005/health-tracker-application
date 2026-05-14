@@ -113,9 +113,8 @@ const Navbar = () => {
                                 </div>
                             </div>
                             <button onClick={handleLogout}
-                                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-600 hover:text-red-400 transition-all duration-200"
-                                    style={{ ':hover': { background: 'rgba(239,68,68,0.1)' } }}>
-                                <LogOut size={16} />
+                                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-gray-400 hover:text-red-400 hover:bg-red-500/10 transition-all duration-200 w-full text-left">
+                                <LogOut size={18} />
                                 <span className="text-sm font-medium">Sign Out</span>
                             </button>
                         </div>
