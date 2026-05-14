@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Health Tracker Application
 
 A comprehensive full-stack web application for tracking health metrics, workouts, nutrition, and daily activities. Built with React, Express.js, and MongoDB.
@@ -376,3 +377,7 @@ For issues and questions:
 - Dashboard with daily summary
 - User profile management
 - Weekly analytics for all trackers
+=======
+# health-tracker-application
+A modern full-stack Health Tracker web application built using the MERN stack with features like workout tracking, calorie monitoring, sleep analysis, hydration tracking, authentication, analytics dashboard, and responsive UI.
+>>>>>>> 4c2594f90f685f22132ec2791811bd3cb25bf64f
