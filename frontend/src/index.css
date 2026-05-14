@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Dark Theme Colors ── */
+  --color-background: #0d0d14;
+  --color-surface: #13131f;
+  --color-card: #1a1a2e;
+  --color-card-hover: #1e1e35;
+  --color-border: rgba(255, 255, 255, 0.07);
+
+  --color-accent-purple: #8b5cf6;
+  --color-accent-green: #10b981;
+  --color-accent-orange: #f97316;
+  --color-accent-blue: #3b82f6;
+  --color-accent-rose: #f43f5e;
+  --color-accent-teal: #14b8a6;
+  --color-accent-yellow: #eab308;
+
+  --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-glow-purple: 0 0 20px rgba(139, 92, 246, 0.3);
+
+  --font-sans: "Outfit", "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: #f1f5f9;
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--font-sans);
+    margin: 0;
+  }
+}
+
+@layer utilities {
+  .glass-dark {
+    background-color: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-dark {
+    background-color: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 1.25rem;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
